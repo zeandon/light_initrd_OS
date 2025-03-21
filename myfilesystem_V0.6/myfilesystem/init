@@ -1,0 +1,10 @@
+#!/bin/sh 
+mount -t proc none /proc
+mount -t sysfs none /sys
+mount -t devtmpfs none /dev
+modprobe -a mptspi sd_mod ext4
+/lib/systemd/systemd-udevd 
+udevadm trigger --action=add
+udevadm settle || true
+mount /dev/sda1 /mnt/hd
+exec /bin/bash
