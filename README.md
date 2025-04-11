@@ -7,4 +7,4 @@
 ## V0.7
 加入systemd，用于管理系统\
 写了一个bash.service单元，在multi-user.target启动之后自动进入，能够实现在bash界面输入exit后重新创建一个bash，不会就此崩溃\
-添加了一个update_grub.sh脚本，可以实现快速地打包initrd.img文件并更新grub\
+添加了一个update_grub.sh脚本，可以实现快速地打包initrd.img文件并更新grub
