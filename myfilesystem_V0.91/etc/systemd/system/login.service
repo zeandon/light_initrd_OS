@@ -1,0 +1,13 @@
+[Unit]
+Description=Login Service
+After=multi-user.target
+
+[Service]
+ExecStart=/bin/login
+Restart=always
+StandardInput=tty-force
+StandardOutput=tty
+StandardError=tty
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,10 @@
+[Unit]
+Description=Interactive Bash Shell
+After=multi-user.target
+
+[Service]
+ExecStart=/bin/bash -i
+Restart=always
+StandardInput=tty-force
+StandardOutput=tty
+StandardError=tty
