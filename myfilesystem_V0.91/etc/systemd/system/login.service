@@ -3,7 +3,7 @@ Description=Login Service
 After=multi-user.target
 
 [Service]
-ExecStart=/bin/login
+ExecStart=-/bin/login
 Restart=always
 StandardInput=tty-force
 StandardOutput=tty
