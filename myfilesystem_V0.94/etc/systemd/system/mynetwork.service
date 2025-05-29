@@ -1,0 +1,16 @@
+[Unit]
+Description=My Network Service
+Before=login.service
+
+[Service]
+Type=oneshot
+ExecStart=/sbin/modprobe e1000
+ExecStart=/bin/ip link set eth0 up
+ExecStart=/bin/ip addr add 192.168.15.120/24 dev eth0 
+ExecStart=/bin/ip addr add 192.168.15.121/24 dev eth0 
+ExecStart=/bin/ip addr add 192.168.15.122/24 dev eth0 
+ExecStart=/bin/ip addr add 192.168.15.123/24 dev eth0 
+ExecStart=/bin/route add default gw 192.168.15.2
+
+[Install]
+WantedBy=default.target

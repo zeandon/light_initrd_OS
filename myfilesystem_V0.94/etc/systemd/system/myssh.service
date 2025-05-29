@@ -1,0 +1,19 @@
+[Unit]
+Description= My OpenBSD Secure Shell server
+
+[Service]
+EnvironmentFile=-/etc/default/ssh
+ExecStartPre=/sbin/sshd -t
+ExecStart=/sbin/sshd -D $SSHD_OPTS
+ExecReload=/sbin/sshd -t
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=process
+Restart=on-failure
+RestartPreventExitStatus=255
+Type=notify
+RuntimeDirectory=sshd
+RuntimeDirectoryMode=0755
+
+[Install]
+WantedBy=multi-user.target
+Alias=sshd.service
