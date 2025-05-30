@@ -1,0 +1,37 @@
+kernel/arch/x86/crypto/aesni-intel.ko.zst: kernel/lib/crypto/gf128mul.ko.zst kernel/crypto/crypto_simd.ko.zst kernel/crypto/cryptd.ko.zst
+kernel/arch/x86/crypto/sha1-ssse3.ko.zst:
+kernel/arch/x86/crypto/sha256-ssse3.ko.zst:
+kernel/arch/x86/crypto/ghash-clmulni-intel.ko.zst: kernel/crypto/cryptd.ko.zst
+kernel/arch/x86/crypto/polyval-clmulni.ko.zst: kernel/crypto/polyval-generic.ko.zst kernel/lib/crypto/gf128mul.ko.zst
+kernel/kernel/configs.ko.zst:
+kernel/fs/binfmt_misc.ko.zst:
+kernel/fs/autofs/autofs4.ko.zst:
+kernel/crypto/cmac.ko.zst:
+kernel/crypto/cryptd.ko.zst:
+kernel/crypto/polyval-generic.ko.zst: kernel/lib/crypto/gf128mul.ko.zst
+kernel/crypto/ecc.ko.zst:
+kernel/crypto/ecdh_generic.ko.zst: kernel/crypto/ecc.ko.zst
+kernel/crypto/crypto_simd.ko.zst: kernel/crypto/cryptd.ko.zst
+kernel/lib/crypto/gf128mul.ko.zst:
+kernel/drivers/block/floppy.ko.zst:
+kernel/drivers/scsi/scsi_transport_spi.ko.zst:
+kernel/drivers/scsi/scsi_transport_fc.ko.zst:
+kernel/drivers/scsi/scsi_transport_sas.ko.zst:
+kernel/drivers/ata/ahci.ko.zst: kernel/drivers/ata/libahci.ko.zst
+kernel/drivers/ata/libahci.ko.zst:
+kernel/drivers/ata/acard-ahci.ko.zst: kernel/drivers/ata/libahci.ko.zst
+kernel/drivers/ata/ahci_platform.ko.zst: kernel/drivers/ata/libahci_platform.ko.zst kernel/drivers/ata/libahci.ko.zst
+kernel/drivers/ata/libahci_platform.ko.zst: kernel/drivers/ata/libahci.ko.zst
+kernel/drivers/ata/ahci_dwc.ko.zst: kernel/drivers/ata/libahci_platform.ko.zst kernel/drivers/ata/libahci.ko.zst
+kernel/drivers/ata/pata_acpi.ko.zst:
+kernel/drivers/net/ethernet/intel/e1000/e1000.ko.zst:
+kernel/drivers/net/ethernet/intel/e1000e/e1000e.ko.zst:
+kernel/drivers/net/vmxnet3/vmxnet3.ko.zst:
+kernel/drivers/message/fusion/mptbase.ko.zst:
+kernel/drivers/message/fusion/mptscsih.ko.zst: kernel/drivers/message/fusion/mptbase.ko.zst
+kernel/drivers/message/fusion/mptspi.ko.zst: kernel/drivers/scsi/scsi_transport_spi.ko.zst kernel/drivers/message/fusion/mptscsih.ko.zst kernel/drivers/message/fusion/mptbase.ko.zst
+kernel/drivers/message/fusion/mptfc.ko.zst: kernel/drivers/scsi/scsi_transport_fc.ko.zst kernel/drivers/message/fusion/mptscsih.ko.zst kernel/drivers/message/fusion/mptbase.ko.zst
+kernel/drivers/message/fusion/mptsas.ko.zst: kernel/drivers/scsi/scsi_transport_sas.ko.zst kernel/drivers/message/fusion/mptscsih.ko.zst kernel/drivers/message/fusion/mptbase.ko.zst
+kernel/drivers/hid/hid.ko.zst:
+kernel/drivers/hid/hid-generic.ko.zst: kernel/drivers/hid/hid.ko.zst
+kernel/drivers/hid/usbhid/usbhid.ko.zst: kernel/drivers/hid/hid.ko.zst

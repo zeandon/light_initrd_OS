@@ -1,0 +1,15 @@
+[Unit]
+Description=My devices Service
+Before=login.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStartPre=-/sbin/modprobe -a mptspi sd_mod ext4
+ExecStart=/bin/sh -c "/lib/systemd/systemd-udevd --daemon & \
+    udevadm trigger --type=subsystems --action=add \
+    udevadm trigger --type=devices --action=add \
+    udevadm settle || true"
+
+[Install]
+WantedBy=default.target

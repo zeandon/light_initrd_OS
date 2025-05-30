@@ -1,0 +1,12 @@
+[Unit]
+Description=My Network Service
+Before=login.service
+
+[Service]
+Type=oneshot
+ExecStart=/sbin/modprobe e1000
+ExecStart=/sbin/modprobe e1000e
+ExecStart=/bin/ip link set eth0 up
+
+[Install]
+WantedBy=default.target
